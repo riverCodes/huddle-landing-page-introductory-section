@@ -198,8 +198,8 @@ ion-icon {
   .text-container {
     /* background: green; */
     place-items: center left;
-    width: max(50%, 34rem);
-    /* Width: 34rem, Min Width: 50% */
+    width: min(50%, 34rem);
+    /* Width: 50%, Max Width: 34rem */
   }
 
   h1 {
