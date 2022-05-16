@@ -136,6 +136,7 @@ p {
   height: fit-content;
   display: grid;
   place-items: center;
+  gap: 2rem;
 }
 
 .icon-tray {
@@ -147,11 +148,16 @@ p {
 
 ion-icon {
   font-size: clamp(1.5rem, 7vw, 2rem);
+  /* Min Width: 1.5rem, InBetween Width: 7vw, Max Width: 2rem */
   color: white;
 }
 
 .footer a {
   color: var(--soft-magenta);
+}
+
+.footer p {
+  text-align: center;
 }
 
 /* Media Queries */
@@ -164,40 +170,44 @@ ion-icon {
 
   .main {
     flex-direction: row;
-    width: min(100%, 1300px);
-    gap: 1rem;
+    width: min(100%, 81.25rem);
+    /* Width: 100% Max Width: 81.25rem */
+    justify-content: space-between;
   }
 
   .header {
-    width: min(100%, 1300px);
+    width: min(100%, 81.25rem);
+    /* Width: 100% Max Width: 81.25rem */
   }
 
   .footer {
-    width: min(100%, 1300px);
+    width: min(100%, 81.25rem);
+    /* Width: 100% Max Width: 81.25rem */
   }
 
   .mockup-container {
-    width: min(50%, 650px);
+    width: min(100%, 40.625rem);
+    /* Width: 100% Max Width: 40.625rem */
   }
 
   .mockup {
     width: max(15rem, 100%);
-    /* Width: 100% Max Width: 40rem */
+    /* Width: 100% Min Width: 15rem */
   }
 
   .text-container {
     /* background: green; */
     place-items: center left;
-    width: max(20rem, 34rem);
-    /* Width: 100% Max Width: 34rem */
+    width: max(50%, 34rem);
+    /* Width: 34rem, Min Width: 50% */
   }
 
   h1 {
     text-align: left;
     font-size: clamp(1rem, 4vw, 2.5rem);
-    /* Min Width: 1.5rem, InBetween Width: 5vw, Max Width: 2.5rem */
+    /* Min Width: 1rem, InBetween Width: 4vw, Max Width: 2.5rem */
     width: min(100%, 30rem);
-    /* Width: 100% Max Width: 30rem */
+    /* Width: 100%, Max Width: 30rem */
   }
 
   p {
@@ -206,7 +216,7 @@ ion-icon {
 
   .register {
     width: min(65%, 10rem);
-    /* Width: 65% Max Width: 10rem */
+    /* Width: 65%, Max Width: 10rem */
   }
 
   .icon-tray {
@@ -214,6 +224,7 @@ ion-icon {
   }
 
   ion-icon {
-    font-size: 2.5rem;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    /* Min Width: 1rem, InBetween Width: 4vw, Max Width: 2.5rem */
   }
 }
