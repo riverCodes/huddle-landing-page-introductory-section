@@ -33,7 +33,6 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
 }
 
 p,
@@ -43,154 +42,171 @@ h1 {
 
 /* Centering and BG Styles */
 body {
-  padding: 2rem;
-  background: var(--violet) url(./images/bg-mobile.svg) no-repeat;
-  background-size: auto 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background:
+    var(--violet) url(./images/bg-mobile.svg) no-repeat top center;
+  background-size: 100%;
+  height: calc(100% - 4rem);
+  margin: 2rem 2rem;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 3.5rem;
+  place-items: center;
+
 }
 
-.container {
-  padding: 2rem;
-  margin-block: auto;
-}
 
 /* Header Styles */
-header {
+.header {
+  /* background: lightpink; */
   width: 100%;
-  margin-bottom: 3.5rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  place-items: center left;
 }
 
 .logo {
-  width: 8.5rem;
+  width: clamp(8rem, 42%, 12rem);
+  /* Min Width: 8rem, InBetween Width: 42%, Max Width: 12rem */
 }
 
 /* Main Styles */
-main {
+.main {
+  /* background: red; */
   width: 100%;
-  display: grid;
-  gap: 3.5rem;
+  display: flex;
+  flex-direction: column;
   place-items: center;
-  margin-bottom: 3.5rem;
+  gap: 3rem;
 }
 
-.mockup {
-  width: 60rem;
+.mockup-container {
+  /* background: yellow; */
+  display: grid;
+  place-items: center;
+  width: 100%;
 }
 
 .text-container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* background: green; */
+  display: grid;
+  place-items: center;
+  width: min(100%, 30rem);
+  /* Width: 100% Max Width: 30rem */
+}
+
+.mockup {
+  width: min(100%, 31.875rem);
+  /* Width: 100% Max Width: 31.875rem */
 }
 
 h1 {
-  text-transform: capitalize;
+  text-align: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
   font-weight: 600;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  /* Min Width: 1.5rem, InBetween Width: 5vw, Max Width: 2rem */
+  text-transform: capitalize;
   margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  /* Min Width: 1.5rem, InBetween Width: 5vw, Max Width: 2rem */
+  margin-bottom: 2rem;
 }
 
 .register {
-  text-decoration: none;
-  color: var(--violet);
+  padding: .6rem;
   background: white;
-  padding: .5rem;
-  width: 60%;
-  border-radius: 10rem;
-  font-size: .8rem;
-  box-shadow: 0 3px 1px 0px rgba(0, 0, 0, .5);
-  font-family: 'Comic Sans', sans-serif;
+  width: min(65%, 18.75rem);
+  /* Width: 65% Max Width: 18.75rem */
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(.8rem, 3vw, 1rem);
+  /* Min Width: .8rem, InBetween Width: 5vw, Max Width: 1rem */
+  color: var(--violet);
+  border-radius: 100px;
+  box-shadow: 0 3px 5px 0 rgba(0 0 0 / .5);
 }
 
+
 /* Footer Styles */
-footer {
+.footer {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  height: fit-content;
+  display: grid;
+  place-items: center;
 }
 
 .icon-tray {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
   gap: 1rem;
 }
 
 ion-icon {
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 7vw, 2rem);
   color: white;
 }
 
-.attribution a {
-  color: black;
+.footer a {
+  color: var(--soft-magenta);
 }
 
 /* Media Queries */
-@media (min-width: 475px) {
-  :root {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 800px) {
+@media (min-width: 750px) {
   body {
     background: var(--violet) url(./images/bg-desktop.svg) no-repeat;
     background-size: auto 100%;
-    padding: 5rem;
+    margin: 2rem 4rem;
   }
 
-  .logo {
-    width: 12rem;
+  .main {
+    flex-direction: row;
+    width: min(100%, 1300px);
+    gap: 1rem;
   }
 
-  main {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+  .header {
+    width: min(100%, 1300px);
+  }
+
+  .footer {
+    width: min(100%, 1300px);
+  }
+
+  .mockup-container {
+    width: min(50%, 650px);
   }
 
   .mockup {
-    width: 60rem;
-  }
-
-  h1 {
-    font-size: 2.7rem;
-  }
-
-  p {
-    font-size: 1.25rem;
+    width: max(15rem, 100%);
+    /* Width: 100% Max Width: 40rem */
   }
 
   .text-container {
+    /* background: green; */
+    place-items: center left;
+    width: max(20rem, 34rem);
+    /* Width: 100% Max Width: 34rem */
+  }
+
+  h1 {
     text-align: left;
-    align-items: start;
-    align-self: center;
-    justify-content: center;
+    font-size: clamp(1rem, 4vw, 2.5rem);
+    /* Min Width: 1.5rem, InBetween Width: 5vw, Max Width: 2.5rem */
+    width: min(100%, 30rem);
+    /* Width: 100% Max Width: 30rem */
+  }
+
+  p {
+    text-align: left;
   }
 
   .register {
-    text-align: center;
-    width: 45%;
-    font-size: 1.3rem;
-    padding: 1rem;
-    box-shadow: 0 10px 10px 0px rgba(0, 0, 0, .3);
+    width: min(65%, 10rem);
+    /* Width: 65% Max Width: 10rem */
   }
 
   .icon-tray {
@@ -200,5 +216,4 @@ ion-icon {
   ion-icon {
     font-size: 2.5rem;
   }
-
 }
