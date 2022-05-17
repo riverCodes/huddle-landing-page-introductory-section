@@ -66,6 +66,7 @@ body {
 .logo {
   width: clamp(8rem, 42%, 12rem);
   /* Min Width: 8rem, InBetween Width: 42%, Max Width: 12rem */
+  cursor: pointer;
 }
 
 /* Main Styles */
@@ -127,6 +128,12 @@ p {
   color: var(--violet);
   border-radius: 100px;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / .5);
+  transition: all .2s ease;
+}
+
+.register:hover {
+  background-color: var(--soft-magenta);
+  color: white;
 }
 
 
@@ -150,6 +157,11 @@ ion-icon {
   font-size: clamp(1.5rem, 7vw, 2rem);
   /* Min Width: 1.5rem, InBetween Width: 7vw, Max Width: 2rem */
   color: white;
+  transition: all .2s ease;
+}
+
+ion-icon:hover {
+  color: var(--soft-magenta);
 }
 
 .footer a {
